@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "8311bd91-4593-4c1b-b622-bd853473e7d3",
+		"name": "Test Coin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34136886"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ghaidakjs@gmail.com\",\r\n    \"password1\": \"testing321\",\r\n    \"password2\": \"testing321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/usersapi/v1/register/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"usersapi",
+								"v1",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ghaidakjs@gmail.com\",\r\n    \"password\": \"testing321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/usersapi/v1/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"usersapi",
+								"v1",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxOTc0ODEyMCwiaWF0IjoxNzE5NjYxNzIwLCJqdGkiOiIxN2M0ZWY2N2JiYWU0Y2Q3OTAzNWVmNDE3NTIxNTQyZiIsInVzZXJfaWQiOjJ9.RGmE1ilHm1FiHgoOJ9brUZXc-fcLaEopfDQwOOKlz7k\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/usersapi/v1/token/refresh/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"usersapi",
+								"v1",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coins",
+			"item": [
+				{
+					"name": "Get All Coins",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5NjYyMDIwLCJpYXQiOjE3MTk2NjE3MjAsImp0aSI6IjA3MDdlYTMxN2ViMTQ0M2Q5Y2M5Mzc2ZGU3NzI0NTBiIiwidXNlcl9pZCI6Mn0.JJYeaiRAx3TlIWrDol4OnJ-X2fXL4wdL8G4PsrT_GN8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/coinapi/v1/coins/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"coinapi",
+								"v1",
+								"coins",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Coin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5NjYyMDIwLCJpYXQiOjE3MTk2NjE3MjAsImp0aSI6IjA3MDdlYTMxN2ViMTQ0M2Q5Y2M5Mzc2ZGU3NzI0NTBiIiwidXNlcl9pZCI6Mn0.JJYeaiRAx3TlIWrDol4OnJ-X2fXL4wdL8G4PsrT_GN8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bitcoin\",\r\n    \"symbol\": \"BTC\",\r\n    \"price\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/coinapi/v1/coins/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"coinapi",
+								"v1",
+								"coins",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
