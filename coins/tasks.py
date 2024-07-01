@@ -10,7 +10,8 @@ def update_price():
     coins = Coin.objects.all()
     
     for coin in coins:
-        url = f'https://api.tokenncoin.com/exchanges/get-pair?exchange=MEXC&pair={coin.symbol}/USDT'
+        url = f'https://api.tokenncoin.com/exchanges/get-pair?exchange=MEXC&pair={coin.symbol.upper()}/USDT'
+        print(coin.symbol.upper())
         try:
             response = requests.get(url)
             response.raise_for_status() 
